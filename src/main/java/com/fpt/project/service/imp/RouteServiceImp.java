@@ -10,9 +10,19 @@ import com.fpt.project.service.RouteService;
 @Service
 public class RouteServiceImp implements RouteService{
 	@Autowired
-	private RouteRepository routeRepository;
+	RouteRepository routeRepository;
 	
 	public Iterable<Route> findAll(){
 		return routeRepository.findAll();
+	}
+
+	@Override
+	public Iterable<Route> findDistinct() {
+		return routeRepository.findDistinct();
+	}
+
+	@Override
+	public Iterable<Route> findDest(String src) {
+		return routeRepository.findDest(src);
 	}
 }
