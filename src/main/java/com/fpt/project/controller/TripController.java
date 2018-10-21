@@ -9,22 +9,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fpt.project.entity.Route;
-import com.fpt.project.service.RouteService;
+import com.fpt.project.entity.Trip;
+import com.fpt.project.service.TripService;
 
 @RestController
-@RequestMapping("/route")
+@RequestMapping("/trip")
 @CrossOrigin
-public class RouteController {
+public class TripController {
 	@Autowired
-	private RouteService routeService;
+	private TripService tripService;
 	
-	@GetMapping("/src")
-	public List<Route> showSrc(){
-		return routeService.findDistinct();
-	}
-	@GetMapping("/des/{src}")
-	public List<Route> showDest(@PathVariable String src){
-		return routeService.findDest(src);
+	@GetMapping("/gettrip/{route_id}")
+	public Iterable<Trip> getTripByRouteId(@PathVariable int route_id){
+		return tripService.findTripByRouteId(route_id);
 	}
 }

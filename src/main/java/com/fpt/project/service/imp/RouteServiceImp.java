@@ -1,5 +1,7 @@
 package com.fpt.project.service.imp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,17 +14,17 @@ public class RouteServiceImp implements RouteService{
 	@Autowired
 	RouteRepository routeRepository;
 	
-	public Iterable<Route> findAll(){
+	public List<Route> findAll(){
 		return routeRepository.findAll();
 	}
 
 	@Override
-	public Iterable<Route> findDistinct() {
+	public List<Route> findDistinct() {
 		return routeRepository.findDistinct();
 	}
 
 	@Override
-	public Iterable<Route> findDest(String src) {
+	public List<Route> findDest(String src) {
 		return routeRepository.findDest(src);
 	}
 }

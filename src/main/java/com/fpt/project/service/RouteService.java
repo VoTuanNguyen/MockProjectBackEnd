@@ -1,9 +1,11 @@
 package com.fpt.project.service;
 
+import java.util.List;
+
 import com.fpt.project.entity.Route;
 
 public interface RouteService{
-	Iterable<Route> findAll();
-	Iterable<Route> findDistinct();
-	Iterable<Route> findDest(String src);
+	List<Route> findAll();
+	List<Route> findDistinct();
+	List<Route> findDest(String id);
 }

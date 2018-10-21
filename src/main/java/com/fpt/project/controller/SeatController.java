@@ -9,22 +9,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fpt.project.entity.Route;
-import com.fpt.project.service.RouteService;
+import com.fpt.project.entity.Seat;
+import com.fpt.project.service.SeatService;
 
 @RestController
-@RequestMapping("/route")
+@RequestMapping("/seat")
 @CrossOrigin
-public class RouteController {
+public class SeatController {
 	@Autowired
-	private RouteService routeService;
+	private SeatService seatService;
 	
-	@GetMapping("/src")
-	public List<Route> showSrc(){
-		return routeService.findDistinct();
-	}
-	@GetMapping("/des/{src}")
-	public List<Route> showDest(@PathVariable String src){
-		return routeService.findDest(src);
+	@GetMapping("/getseatnotavailable/{bus_id}")
+	public List<Seat> getSeatNotAvailableByBusId(@PathVariable int bus_id){
+		return seatService.getSeatNotAvailableByBusId(bus_id);
 	}
 }
