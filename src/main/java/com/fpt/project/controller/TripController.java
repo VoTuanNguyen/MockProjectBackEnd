@@ -20,7 +20,7 @@ public class TripController {
 	private TripService tripService;
 	
 	@GetMapping("/gettrip/{route_id}")
-	public Iterable<Trip> getTripByRouteId(@PathVariable int route_id){
+	public List<Trip> getTripByRouteId(@PathVariable int route_id){
 		return tripService.findTripByRouteId(route_id);
 	}
 }

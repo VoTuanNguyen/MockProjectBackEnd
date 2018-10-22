@@ -32,6 +32,13 @@ public class Route {
 		this.price = price;
 	}
 
+	public Route(String src, String dest, double price) {
+		super();
+		this.src = src;
+		this.dest = dest;
+		this.price = price;
+	}
+
 	public int getId() {
 		return id;
 	}

@@ -32,6 +32,13 @@ public class Bus {
 		this.cardNumber = cardNumber;
 	}
 
+	public Bus(int seatTotal, int status, String cardNumber) {
+		super();
+		this.seatTotal = seatTotal;
+		this.status = status;
+		this.cardNumber = cardNumber;
+	}
+
 	public int getId() {
 		return id;
 	}

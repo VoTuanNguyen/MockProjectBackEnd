@@ -36,6 +36,13 @@ public class Trip {
 		this.route = route;
 	}
 
+	public Trip(String time, Bus bus, Route route) {
+		super();
+		this.time = time;
+		this.bus = bus;
+		this.route = route;
+	}
+
 	public int getId() {
 		return id;
 	}

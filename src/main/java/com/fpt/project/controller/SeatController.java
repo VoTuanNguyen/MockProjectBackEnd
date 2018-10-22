@@ -23,4 +23,8 @@ public class SeatController {
 	public List<Seat> getSeatNotAvailableByBusId(@PathVariable int bus_id){
 		return seatService.getSeatNotAvailableByBusId(bus_id);
 	}
+	@GetMapping("/update/{status}/{id}")
+	public Seat update(@PathVariable int status, @PathVariable int id) {
+		return seatService.updateStatus(status, id);
+	}
 }

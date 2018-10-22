@@ -18,5 +18,12 @@ public class SeatServiceImp implements SeatService {
 	public List<Seat> getSeatNotAvailableByBusId(int bus_id) {
 		return seatRepository.getSeatNotAvailableByBusId(bus_id);
 	}
+
+	@Override
+	public Seat updateStatus(int status, int id) {
+		Seat seat = seatRepository.findSeatById(id);
+		seat.setStatus(status);
+		return seatRepository.saveAndFlush(seat);
+	}
 	
 }

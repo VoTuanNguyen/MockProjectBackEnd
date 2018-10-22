@@ -35,6 +35,13 @@ public class Seat {
 		this.bus = bus;
 	}
 
+	public Seat(int status, String seatNumber, Bus bus) {
+		super();
+		this.status = status;
+		this.seatNumber = seatNumber;
+		this.bus = bus;
+	}
+
 	public int getId() {
 		return id;
 	}

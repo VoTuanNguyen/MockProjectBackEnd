@@ -6,4 +6,5 @@ import com.fpt.project.entity.Seat;
 
 public interface SeatService {
 	List<Seat> getSeatNotAvailableByBusId(int bus_id);
+	Seat updateStatus(int status, int id);
 }
