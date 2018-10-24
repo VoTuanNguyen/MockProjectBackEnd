@@ -11,6 +11,6 @@ import com.fpt.project.entity.Route;
 public interface RouteRepository extends JpaRepository<Route, Integer>{
 	@Query("SELECT r FROM Route r GROUP BY r.src")
 	List<Route> findDistinct();
-	@Query("SELECT r FROM Route r WHERE r.src LIKE (:src)")
+	@Query("SELECT r FROM Route r WHERE LOWER(r.src) LIKE LOWER(:src)")
 	List<Route> findDest(@Param("src") String src);
 }
