@@ -21,6 +21,6 @@ public class JwtGenerator {
 		claims.put("userId", String.valueOf(jwtUser.getId()));
 		claims.put("role", jwtUser.getRole());
 
-		return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, "nguyenvt2").compact();
+		return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, "").compact();
 	}
 }
